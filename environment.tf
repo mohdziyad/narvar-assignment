@@ -1,4 +1,3 @@
-provider "aws" {}
 
 resource "aws_instance" "test" {
   ami = "ami-531a4c3c"
