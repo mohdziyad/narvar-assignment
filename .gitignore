@@ -1,6 +1,6 @@
-*/terraform.tfvars
-*/terraform.tfstate
-*/terraform.tfstate.backup
-*/.terraform
-*/mykey*
-*/.vagrant
+*terraform.tfvars
+*terraform.tfstate
+*terraform.tfstate.backup
+*.terraform
+*mykey*
+*.vagrant
