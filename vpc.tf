@@ -15,7 +15,7 @@ resource "aws_subnet" "a_pub_sub"{
 resource "aws_route_table" "main"{
   vpc_id = "${aws_vpc.assignment.id}"
   route{
-    cidr_block = "10.0.1.0/24"
+    cidr_block = "0.0.0.0/0"
     gateway_id = "${aws_internet_gateway.a-igw.id}"
   }
 }
