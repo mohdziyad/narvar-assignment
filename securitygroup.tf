@@ -1,5 +1,6 @@
 resource "aws_security_group" "new"{
   name = "instance_sg"
+  description = "basic web server access"
   vpc_id = "${aws_vpc.assignment.id}"
   ingress{
     from_port = "80"
