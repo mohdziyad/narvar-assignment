@@ -2,4 +2,4 @@
 app01
 
 [control]
-control
+control ansible_connection=local
