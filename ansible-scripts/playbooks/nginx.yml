@@ -3,7 +3,7 @@
     become: true
     tasks:
       - name: install nginx
-        yum: name=nginx state=latest update_cache=yes
+        apt: name=nginx state=latest update_cache=yes
         notify:
           - start nginx
 
