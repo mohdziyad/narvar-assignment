@@ -3,7 +3,7 @@ resource "aws_key_pair" "deploy"{
   public_key = "${file("/home/vagrant/.ssh/id_rsa.pub")}"
 }
 resource "aws_instance" "web"{
-  ami = "ami-531a4c3c"
+  ami = "ami-84e3b2eb"
   instance_type = "t2.micro"
   subnet_id = "${aws_subnet.a_pub_sub.id}"
   key_name = "web-deploy"
