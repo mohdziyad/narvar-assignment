@@ -7,7 +7,7 @@ resource "aws_instance" "web"{
   instance_type = "t2.micro"
   subnet_id = "${aws_subnet.a_pub_sub.id}"
   key_name = "web-deploy"
-  vpc_security_group_ids = ["${aws_security_group.new.id}"]
+  vpc_security_group_ids = ["${aws_security_group.new.id}","${aws_security_group.openvpn.id}"]
   associate_public_ip_address = "true"
   tags{
     Name = "web-instance"
