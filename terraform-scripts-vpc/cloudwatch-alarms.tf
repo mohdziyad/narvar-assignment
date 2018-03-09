@@ -9,9 +9,9 @@ resource "aws_iam_role" "cloudwatch_role" {
       "Version" : "2012-10-17",
       "Statement" : [
         {
-          "Sid" : "cloudwatc-ec2"
-          "Action" : "cloudwatch:*"
-          "Effect" : "Allow"
+          "Sid" : "cloudwatc-ec2",
+          "Action" : "cloudwatch:*",
+          "Effect" : "Allow",
           "Resource" : "arn:aws:ec2:ap-south-1:261773514547:instance/i-0cab02d22591c5fb4"
         }
       ]
