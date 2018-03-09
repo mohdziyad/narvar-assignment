@@ -54,3 +54,15 @@ resource "aws_cloudwatch_metric_alarm" "cpu" {
     alarm_description = "This alarm sends alert when CPU Utilization is over 80% for more than 5 minutes"
     alarm_actions = ["${aws_sns_topic.alarm_email.arn}"]
 }
+
+resource "aws_cloudwatch_metric_alarm" "disk" {
+    alarm_name = "disk_space"
+    comparison_operator = "GreaterThanOrEqualToThreshold"
+    evaluation_periods = "1"
+    metric_name = "DiskSpaceUsed"
+    namespace = "AWS/EC2"
+    statistic = "Average"
+    threshold = "90"
+    alarm_description = "This alarm sends alert when Disk Space used is over 90%"
+    alarm_actions = ["${aws_sns_topic.alarm_email.arn}"]
+}
