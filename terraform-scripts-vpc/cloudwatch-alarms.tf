@@ -29,16 +29,16 @@ resource "aws_iam_role_policy" "cloudwatch-policy" {
     name = "cloudwatch-iam-policy"
     role = "${aws_iam_role.cloudwatch_role.id}"
     policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "cloudwatch:*",
-            "Resource": "*"
-        }
-      ]
+      "Action": "cloudwatch:*",
+      "Effect": "Allow",
+      "Resource": "*"
     }
+  ]
+}
 EOF
 }
 
