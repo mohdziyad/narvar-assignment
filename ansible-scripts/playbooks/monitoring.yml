@@ -12,7 +12,7 @@
         apt: name=libdatetime-perl state=present update_cache=yes
 
       - name: create directory for scripts
-        file: /home/ubuntu/monitoring state=directory
+        file: path=/home/ubuntu/monitoring state=directory
 
       - name: download monitoring scripts
         get_url: dest=/home/ubuntu/monitoring url=http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
