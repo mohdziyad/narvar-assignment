@@ -9,6 +9,7 @@ resource "aws_instance" "web"{
   key_name = "web-deploy"
   vpc_security_group_ids = ["${aws_security_group.new.id}","${aws_security_group.openvpn.id}"]
   associate_public_ip_address = "true"
+  iam_instance_profile = "${aws_iam_instance_profile.ec2-instance-profile.name}"
   tags{
     Name = "web-instance"
   }

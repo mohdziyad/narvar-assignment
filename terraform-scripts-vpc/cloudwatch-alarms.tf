@@ -2,6 +2,11 @@ resource "aws_sns_topic" "alarm_email"{
   name = "cloudwatch_alarm"
 }
 
+resource "aws_iam_instance_profile" "ec2-instance-profile" {
+    name = "instance-profile-web"
+    role = "${aws_iam_role.cloudwatch_role.name}"
+}
+
 resource "aws_iam_role" "cloudwatch_role" {
     name = "cloudwatch_role_ec2"
     assume_role_policy = <<EOF
