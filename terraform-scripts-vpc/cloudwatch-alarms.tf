@@ -10,7 +10,7 @@ resource "aws_iam_instance_profile" "ec2-instance-profile" {
 resource "aws_iam_role" "cloudwatch_role" {
     name = "cloudwatch_role_ec2"
 }
-resource "aws_iam_policy" "cloudwatch-policy" {
+resource "aws_iam_role_policy" "cloudwatch-policy" {
     name = "cloudwatch-iam-policy"
     role = "${aws_iam_role.cloudwatch_role.id}"
     policy = <<EOF
