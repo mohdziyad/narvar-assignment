@@ -18,7 +18,7 @@
         get_url: dest=/home/ubuntu/monitoring url=http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
 
       - name: unzip scripts
-        unarchive: src=/home/ubuntu/monitoring/*.zip dest=/home/ubuntu/monitoring
+        unarchive: src=/home/ubuntu/monitoring/CloudWatchMonitoringScripts-1.2.1.zip dest=/home/ubuntu/monitoring
 
       - name: copy custom monitoring script to webserver
         copy: src=/vagrant/narvar-assignment/ansible-scripts/custom-script.sh force=yes dest=/home/ubuntu/monitoring
