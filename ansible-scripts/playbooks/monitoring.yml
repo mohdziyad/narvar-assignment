@@ -21,7 +21,7 @@
         unarchive: src=/home/ubuntu/monitoring/*.zip dest=/home/ubuntu/monitoring
 
       - name: copy custom monitoring script to webserver
-        copy: src=/vagrant/narvar-assignment/ansible-scripts/custom-script.sh force=yes /home/ubuntu/monitoring
+        copy: src=/vagrant/narvar-assignment/ansible-scripts/custom-script.sh force=yes dest=/home/ubuntu/monitoring
 
       - name: change permission to the script
         file: path=/home/ubuntu/monitoring/custom-script.sh mode="u+x"
