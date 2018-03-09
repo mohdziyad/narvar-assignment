@@ -44,10 +44,13 @@ EOF
 
 resource "aws_cloudwatch_metric_alarm" "cpu" {
     alarm_name = "cpu_alarm"
-    comparison_operator = "GreaterThanOrEqualToThreshold"
+    comparison_operator = "GreaterThanThreshold"
     evaluation_periods = "1"
     metric_name = "CPUUtilization"
     namespace = "AWS/EC2"
+    dimensions{
+      InstanceId = "${aws_instance.web.id}"
+    }
     period = "300"
     statistic = "Average"
     threshold = "80"
@@ -57,10 +60,13 @@ resource "aws_cloudwatch_metric_alarm" "cpu" {
 
 resource "aws_cloudwatch_metric_alarm" "disk" {
     alarm_name = "disk_space"
-    comparison_operator = "GreaterThanOrEqualToThreshold"
+    comparison_operator = "GreaterThanThreshold"
     evaluation_periods = "1"
     metric_name = "DiskSpaceUsed"
-    namespace = "AWS/EC2"
+    namespace = "custom-disk"
+    dimensions{
+      InstanceId = "${aws_instance.web.id}"
+    }
     period = "300"
     statistic = "Average"
     threshold = "90"
