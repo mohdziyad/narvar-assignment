@@ -1,12 +1,6 @@
 resource "aws_sns_topic" "alarm_email"{
   name = "cloudwatch_alarm"
 }
-resource "aws_sns_topic_subscription" "email_alert"{
-  name= "email_alert"
-  topic_arn = "${aws_sns_topic.alarm_email.arn}"
-  protocol = "email"
-  endpoint = "mhdziyadkp@gmail.com"
-}
 
 resource "aws_cloudwatch_metric_alarm" "cpu" {
     alarm_name = "cpu_alarm"
