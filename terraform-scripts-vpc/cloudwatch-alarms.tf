@@ -62,10 +62,11 @@ resource "aws_cloudwatch_metric_alarm" "disk" {
     alarm_name = "disk_space"
     comparison_operator = "GreaterThanThreshold"
     evaluation_periods = "1"
-    metric_name = "DiskSpaceUsed"
+    metric_name = "DiskSpaceUtilization"
     namespace = "custom-disk"
     dimensions{
       InstanceId = "${aws_instance.web.id}"
+      MountPath = "/"
     }
     period = "300"
     statistic = "Average"
