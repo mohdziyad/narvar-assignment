@@ -24,4 +24,4 @@
         file: path=/home/ubuntu/monitoring/custom-script.sh mode="u+x"
 
       - name: setup cronjob to monitor disk usage every minute
-        cron: minute="*/5" name="monitor disk usage" user="root" job="/home/ubuntu/monitoring/custom-script.sh"
+        cron: minute="*/5" name="monitor disk usage" user="root" job="/home/ubuntu/monitoring/custom-script.sh >> /home/ubuntu/monitoring/out.log 2>&1"
