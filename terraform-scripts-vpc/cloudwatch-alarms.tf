@@ -61,6 +61,7 @@ resource "aws_cloudwatch_metric_alarm" "disk" {
     evaluation_periods = "1"
     metric_name = "DiskSpaceUsed"
     namespace = "AWS/EC2"
+    period = "300"
     statistic = "Average"
     threshold = "90"
     alarm_description = "This alarm sends alert when Disk Space used is over 90%"
