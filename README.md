@@ -1,6 +1,6 @@
 # narvar-assignment
 
--- Environments provisioned entirely using Terraform and all the scripts are available under terraform-scripts-vpc. The tasks are:
+-- Environments provisioned entirely using Terraform and all the scripts are available under terraform-scripts-vpc. The AWS Credentials are coded as ENVIRONMENT VARIABLES in the linux system. The tasks are:
   - VPC Creation (Covering subnet, igw and route tables)
   - Security Group for the instance to allow ingress from given ports
   - Launching the instance into the VPC
