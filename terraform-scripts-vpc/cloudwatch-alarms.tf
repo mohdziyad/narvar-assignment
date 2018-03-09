@@ -6,15 +6,16 @@ resource "aws_iam_role" "cloudwatch_role" {
     name = "cloudwatch_role_ec2"
     assume_role_policy = <<EOF
     {
-      "Version" : "2012-10-17",
-      "Statement" : 
+    "Version": "2012-10-17",
+    "Statement": [
         {
-          "Sid" : "cloudwatc-ec2",
-          "Action" : "cloudwatch:*",
-          "Effect" : "Allow",
-          "Resource" : "arn:aws:ec2:ap-south-1:261773514547:instance/i-0cab02d22591c5fb4"
+            "Sid": "CloudwatchRole",
+            "Effect": "Allow",
+            "Action": "cloudwatch:*",
+            "Resource": "*"
         }
-    }
+    ]
+}
 EOF
 }
 
